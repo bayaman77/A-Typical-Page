@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/A-Typical-Page/static/css/main.c7ec3132.css",
+    "main.js": "/A-Typical-Page/static/js/main.ea5c4833.js",
+    "index.html": "/A-Typical-Page/index.html",
+    "main.c7ec3132.css.map": "/A-Typical-Page/static/css/main.c7ec3132.css.map",
+    "main.ea5c4833.js.map": "/A-Typical-Page/static/js/main.ea5c4833.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7ec3132.css",
+    "static/js/main.ea5c4833.js"
+  ]
+}
