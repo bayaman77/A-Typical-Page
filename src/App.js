@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header/Header";
+import "./App.css";
+import LoginForm from "./components/LoginPage/LoginForm";
+import HomePage from "./components/HomePage/HomePage";
 
-function App() {
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [page, setPage] = useState(true)
+
+  useEffect(() => {
+    const result = localStorage.getItem("AUTH");
+    setIsLoggedIn(!!result);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setPage={setPage}/>
+      {isLoggedIn ? (
+        <HomePage page={page}/>
+      ) : (
+        <LoginForm setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
+      )}
+    </>
   );
-}
+};
 
 export default App;
